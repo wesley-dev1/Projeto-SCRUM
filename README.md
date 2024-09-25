@@ -1,6 +1,6 @@
-Sistema Scrum em Java 17
+# Sistema de Gerenciamento de Scrum em Java 17
 
-Este é um sistema simples desenvolvido em Java 17 que simula um ambiente Scrum, permitindo que diferentes usuários interajam com o sistema de acordo com seus papéis (Product Owner, Scrum Master e Desenvolvedor). O sistema é executado inteiramente em memória, sem necessidade de banco de dados ou ferramentas externas.
+## Este é um sistema simples desenvolvido em Java 17 que simula um ambiente Scrum, permitindo que diferentes usuários interajam com o sistema de acordo com seus papéis (Product Owner, Scrum Master e Desenvolvedor). O sistema é executado inteiramente em memória, sem necessidade de banco de dados ou ferramentas externas.
 Índice
 
     Funcionalidades
@@ -17,7 +17,7 @@ Este é um sistema simples desenvolvido em Java 17 que simula um ambiente Scrum,
     Contribuição
     Licença
 
-Funcionalidades
+## Funcionalidades
 
     Product Owner:
         Criar e priorizar histórias de usuário e tarefas.
@@ -32,12 +32,12 @@ Funcionalidades
         Pegar tarefas do backlog e assumir responsabilidade.
         Atualizar o status das tarefas atribuídas.
 
-Requisitos
+## Requisitos
 
     Java 17 ou superior.
     IDE: IntelliJ IDEA (recomendado) ou qualquer outra de sua preferência.
 
-Configuração do Projeto
+## Configuração do Projeto
 
     Clone o repositório:
 
@@ -61,7 +61,7 @@ Configuração do Projeto
     Compile o projeto:
         Vá em "Build" > "Build Project" ou pressione Ctrl+F9.
 
-Como Executar
+## Como Executar
 
     Execute a classe Main:
         No painel Project, navegue até src/com.scrum/Main.java.
