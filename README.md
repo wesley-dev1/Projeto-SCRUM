@@ -43,7 +43,7 @@ Configuração do Projeto
 
     bash
 
-    git clone https://github.com/seu-usuario/sistema-scrum-java.git
+    git clone https://github.com/wesley-dev1/Projeto-SCRUM.git
 
     Importe o projeto na IDE:
         Abra o IntelliJ IDEA.
