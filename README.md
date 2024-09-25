@@ -1,7 +1,7 @@
 # Sistema de Gerenciamento de Scrum em Java 17
 
-## Este é um sistema simples desenvolvido em Java 17 que simula um ambiente Scrum, permitindo que diferentes usuários interajam com o sistema de acordo com seus papéis (Product Owner, Scrum Master e Desenvolvedor). O sistema é executado inteiramente em memória, sem necessidade de banco de dados ou ferramentas externas.
-Índice
+Este é um sistema simples desenvolvido em Java 17 que simula um ambiente Scrum, permitindo que diferentes usuários interajam com o sistema de acordo com seus papéis (Product Owner, Scrum Master e Desenvolvedor). O sistema é executado inteiramente em memória, sem necessidade de banco de dados ou ferramentas externas.
+## Índice
 
     Funcionalidades
     Requisitos
