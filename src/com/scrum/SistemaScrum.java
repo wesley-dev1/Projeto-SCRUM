@@ -66,7 +66,8 @@ public class SistemaScrum {
                 case PRODUCT_OWNER:
                     System.out.println("1. Criar História de Usuário");
                     System.out.println("2. Priorizar Backlog");
-                    System.out.println("3. Sair");
+                    System.out.println("3. Visualizar Tarefas dos Desenvolvedores"); // Nova opção
+                    System.out.println("4. Sair");
                     int opcaoPO = scanner.nextInt();
                     scanner.nextLine(); // Consumir nova linha
                     switch (opcaoPO) {
@@ -77,6 +78,9 @@ public class SistemaScrum {
                             priorizarBacklog(scanner);
                             break;
                         case 3:
+                            visualizarTarefasDesenvolvedores(scanner);
+                            break;
+                        case 4:
                             sair = true;
                             break;
                         default:
@@ -86,7 +90,8 @@ public class SistemaScrum {
                 case SCRUM_MASTER:
                     System.out.println("1. Gerenciar Sprint");
                     System.out.println("2. Remover Impedimentos");
-                    System.out.println("3. Sair");
+                    System.out.println("3. Visualizar Tarefas dos Desenvolvedores"); // Nova opção
+                    System.out.println("4. Sair");
                     int opcaoSM = scanner.nextInt();
                     scanner.nextLine();
                     switch (opcaoSM) {
@@ -97,6 +102,9 @@ public class SistemaScrum {
                             removerImpedimentos(scanner);
                             break;
                         case 3:
+                            visualizarTarefasDesenvolvedores(scanner);
+                            break;
+                        case 4:
                             sair = true;
                             break;
                         default:
@@ -208,6 +216,37 @@ public class SistemaScrum {
         System.out.println("Listando impedimentos...");
         // Implementação fictícia, pois impedimentos não foram definidos
         System.out.println("Nenhum impedimento encontrado.");
+    }
+
+    // Novo método para visualizar as tarefas dos desenvolvedores
+    private void visualizarTarefasDesenvolvedores(Scanner scanner) {
+        System.out.println("Desenvolvedores:");
+        List<Usuario> desenvolvedores = new ArrayList<>();
+        for (Usuario usuario : usuarios) {
+            if (usuario.getPapel() == PapelUsuario.DESENVOLVEDOR) {
+                desenvolvedores.add(usuario);
+            }
+        }
+        for (int i = 0; i < desenvolvedores.size(); i++) {
+            System.out.println((i + 1) + ". " + desenvolvedores.get(i).getNome());
+        }
+        System.out.print("Selecione o desenvolvedor para ver as tarefas: ");
+        int indiceDev = scanner.nextInt() - 1;
+        scanner.nextLine();
+        if (indiceDev >= 0 && indiceDev < desenvolvedores.size()) {
+            Usuario devSelecionado = desenvolvedores.get(indiceDev);
+            List<Tarefa> tarefasDev = board.getTarefasPorUsuario(devSelecionado);
+            if (tarefasDev.isEmpty()) {
+                System.out.println("O desenvolvedor não possui tarefas atribuídas.");
+            } else {
+                System.out.println("Tarefas do desenvolvedor " + devSelecionado.getNome() + ":");
+                for (Tarefa tarefa : tarefasDev) {
+                    System.out.println("- " + tarefa.getDescricao() + " [" + tarefa.getStatus() + "]");
+                }
+            }
+        } else {
+            System.out.println("Índice de desenvolvedor inválido.");
+        }
     }
 
     // Desenvolvedor
